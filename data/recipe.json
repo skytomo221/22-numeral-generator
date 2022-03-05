@@ -1,0 +1,676 @@
+{
+  "super_languages": [
+    {
+      "language": "zh",
+      "population": 1020.85
+    },
+    {
+      "language": "en",
+      "population": 818.9
+    },
+    {
+      "language": "es",
+      "population": 500.45
+    },
+    {
+      "language": "hi",
+      "population": 489.65
+    },
+    {
+      "language": "bn",
+      "population": 246.9
+    },
+    {
+      "language": "pt",
+      "population": 240
+    },
+    {
+      "language": "ru",
+      "population": 205.75
+    },
+    {
+      "language": "fr",
+      "population": 176.95
+    },
+    {
+      "language": "ar",
+      "population": 137
+    },
+    {
+      "language": "ja",
+      "population": 126.26075
+    },
+    {
+      "language": "id",
+      "population": 121.3
+    },
+    {
+      "language": "ur",
+      "population": 119.8
+    },
+    {
+      "language": "de",
+      "population": 103.55
+    }
+  ],
+  "super_words": [
+    {
+      "id": 128,
+      "meaning": "0",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "零"
+        },
+        {
+          "language": "en",
+          "word": "zero",
+          "ipa": "ˈzɪə.ɹəʊ",
+          "loan": "zirou"
+        },
+        {
+          "language": "es",
+          "word": "cero"
+        },
+        {
+          "language": "hi",
+          "word": "शून्य",
+          "ipa": "ʃuːnja"
+        },
+        {
+          "language": "bn",
+          "word": "শূন্য",
+          "ipa": "ʃunyo"
+        },
+        {
+          "language": "pt",
+          "word": "zero"
+        },
+        {
+          "language": "ru",
+          "word": "нуль"
+        },
+        {
+          "language": "fr",
+          "word": "zéro"
+        },
+        {
+          "language": "ar",
+          "word": "صفر"
+        },
+        {
+          "language": "ja",
+          "word": "れい"
+        },
+        {
+          "language": "id",
+          "word": "nol",
+          "ipa": "nol"
+        },
+        {
+          "language": "ur",
+          "word": "صفر",
+          "ipa": "sifr",
+          "loan": "sifr"
+        },
+        {
+          "language": "de",
+          "word": "null"
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "meaning": "1",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "一"
+        },
+        {
+          "language": "en",
+          "word": "one"
+        },
+        {
+          "language": "es",
+          "word": "uno"
+        },
+        {
+          "language": "hi",
+          "word": "एक"
+        },
+        {
+          "language": "bn",
+          "word": "এক",
+          "ipa": "æːk"
+        },
+        {
+          "language": "pt",
+          "word": "um"
+        },
+        {
+          "language": "ru",
+          "word": "один"
+        },
+        {
+          "language": "fr",
+          "word": "un"
+        },
+        {
+          "language": "ar",
+          "word": "واحد"
+        },
+        {
+          "language": "ja",
+          "word": "いち"
+        },
+        {
+          "language": "id",
+          "word": "satu",
+          "ipa": "satu"
+        },
+        {
+          "language": "ur",
+          "word": "ایک",
+          "ipa": "ek"
+        },
+        {
+          "language": "de",
+          "word": "eins"
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "meaning": "2",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "二"
+        },
+        {
+          "language": "en",
+          "word": "two"
+        },
+        {
+          "language": "es",
+          "word": "dos"
+        },
+        {
+          "language": "hi",
+          "word": "दो"
+        },
+        {
+          "language": "bn",
+          "word": "দুই",
+          "ipa": "dui"
+        },
+        {
+          "language": "pt",
+          "word": "dois"
+        },
+        {
+          "language": "ru",
+          "word": "два"
+        },
+        {
+          "language": "fr",
+          "word": "deux"
+        },
+        {
+          "language": "ar",
+          "word": "اثنان"
+        },
+        {
+          "language": "ja",
+          "word": "に"
+        },
+        {
+          "language": "id",
+          "word": "dua",
+          "ipa": "dua"
+        },
+        {
+          "language": "ur",
+          "word": "دو",
+          "ipa": "du"
+        },
+        {
+          "language": "de",
+          "word": "zwei"
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "meaning": "3",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "三"
+        },
+        {
+          "language": "en",
+          "word": "three"
+        },
+        {
+          "language": "es",
+          "word": "tres"
+        },
+        {
+          "language": "hi",
+          "word": "तीन"
+        },
+        {
+          "language": "bn",
+          "word": "তিন",
+          "ipa": "tin"
+        },
+        {
+          "language": "pt",
+          "word": "três"
+        },
+        {
+          "language": "ru",
+          "word": "три"
+        },
+        {
+          "language": "fr",
+          "word": "trois"
+        },
+        {
+          "language": "ar",
+          "word": "ثلاثة"
+        },
+        {
+          "language": "ja",
+          "word": "さん"
+        },
+        {
+          "language": "id",
+          "word": "tiga",
+          "ipa": "tiga"
+        },
+        {
+          "language": "ur",
+          "word": "تین",
+          "ipa": "tin"
+        },
+        {
+          "language": "de",
+          "word": "drei"
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "meaning": "4",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "四"
+        },
+        {
+          "language": "en",
+          "word": "four"
+        },
+        {
+          "language": "es",
+          "word": "cuatro"
+        },
+        {
+          "language": "hi",
+          "word": "चार"
+        },
+        {
+          "language": "bn",
+          "word": "চার",
+          "ipa": "ʈʃar"
+        },
+        {
+          "language": "pt",
+          "word": "quatro"
+        },
+        {
+          "language": "ru",
+          "word": "четыре"
+        },
+        {
+          "language": "fr",
+          "word": "quatre"
+        },
+        {
+          "language": "ar",
+          "word": "أربعة"
+        },
+        {
+          "language": "ja",
+          "word": "し"
+        },
+        {
+          "language": "id",
+          "word": "empat",
+          "ipa": "empat"
+        },
+        {
+          "language": "ur",
+          "word": "چار",
+          "ipa": "t͡ʃɑːɾ"
+        },
+        {
+          "language": "de",
+          "word": "vier"
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "meaning": "5",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "五"
+        },
+        {
+          "language": "en",
+          "word": "five"
+        },
+        {
+          "language": "es",
+          "word": "cinco"
+        },
+        {
+          "language": "hi",
+          "word": "पाँच"
+        },
+        {
+          "language": "bn",
+          "word": "পাঁচ",
+          "ipa": "pamc"
+        },
+        {
+          "language": "pt",
+          "word": "cinco"
+        },
+        {
+          "language": "ru",
+          "word": "пять"
+        },
+        {
+          "language": "fr",
+          "word": "cinq"
+        },
+        {
+          "language": "ar",
+          "word": "خمسة"
+        },
+        {
+          "language": "ja",
+          "word": "ご"
+        },
+        {
+          "language": "id",
+          "word": "lima",
+          "ipa": "lima"
+        },
+        {
+          "language": "ur",
+          "word": "پانچ",
+          "ipa": "pɑ̃ːt͡ʃ"
+        },
+        {
+          "language": "de",
+          "word": "fünf"
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "meaning": "6",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "六"
+        },
+        {
+          "language": "en",
+          "word": "six"
+        },
+        {
+          "language": "es",
+          "word": "seis"
+        },
+        {
+          "language": "hi",
+          "word": "छह",
+          "ipa": "t͡ʃʰəɦ",
+          "loan": "tcah"
+        },
+        {
+          "language": "bn",
+          "word": "ছয়",
+          "ipa": "tʃʰɔj"
+        },
+        {
+          "language": "pt",
+          "word": "seis"
+        },
+        {
+          "language": "ru",
+          "word": "шесть"
+        },
+        {
+          "language": "fr",
+          "word": "six"
+        },
+        {
+          "language": "ar",
+          "word": "ستة"
+        },
+        {
+          "language": "ja",
+          "word": "ろく"
+        },
+        {
+          "language": "id",
+          "word": "enam",
+          "ipa": "enam"
+        },
+        {
+          "language": "ur",
+          "word": "چھہ",
+          "ipa": "t͡ʃʰeː"
+        },
+        {
+          "language": "de",
+          "word": "sechs"
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "meaning": "7",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "七"
+        },
+        {
+          "language": "en",
+          "word": "seven",
+          "ipa": "sɛvən",
+          "loan": "seven"
+        },
+        {
+          "language": "es",
+          "word": "siete"
+        },
+        {
+          "language": "hi",
+          "word": "सात"
+        },
+        {
+          "language": "bn",
+          "word": "সাত",
+          "ipa": "ʃat"
+        },
+        {
+          "language": "pt",
+          "word": "sete"
+        },
+        {
+          "language": "ru",
+          "word": "семь"
+        },
+        {
+          "language": "fr",
+          "word": "trois"
+        },
+        {
+          "language": "ar",
+          "word": "سبعة"
+        },
+        {
+          "language": "ja",
+          "word": "しち"
+        },
+        {
+          "language": "id",
+          "word": "tujuh",
+          "ipa": "tujuh"
+        },
+        {
+          "language": "ur",
+          "word": "سات",
+          "ipa": "sɑːt̪"
+        },
+        {
+          "language": "de",
+          "word": "sieben"
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "meaning": "8",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "八"
+        },
+        {
+          "language": "en",
+          "word": "eight"
+        },
+        {
+          "language": "es",
+          "word": "ocho"
+        },
+        {
+          "language": "hi",
+          "word": "आठ"
+        },
+        {
+          "language": "bn",
+          "word": "আট",
+          "ipa": "aʈ"
+        },
+        {
+          "language": "pt",
+          "word": "oito"
+        },
+        {
+          "language": "ru",
+          "word": "восемь"
+        },
+        {
+          "language": "fr",
+          "word": "huit"
+        },
+        {
+          "language": "ar",
+          "word": "ثمانية"
+        },
+        {
+          "language": "ja",
+          "word": "はち"
+        },
+        {
+          "language": "id",
+          "word": "delapan",
+          "ipa": "delapan"
+        },
+        {
+          "language": "ur",
+          "word": "آٹھ",
+          "ipa": "aːʈʰ"
+        },
+        {
+          "language": "de",
+          "word": "acht"
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "meaning": "9",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "九"
+        },
+        {
+          "language": "en",
+          "word": "nine"
+        },
+        {
+          "language": "es",
+          "word": "nueve"
+        },
+        {
+          "language": "hi",
+          "word": "नौ"
+        },
+        {
+          "language": "bn",
+          "word": "নয়",
+          "ipa": "noy"
+        },
+        {
+          "language": "pt",
+          "word": "nove"
+        },
+        {
+          "language": "ru",
+          "word": "девять"
+        },
+        {
+          "language": "fr",
+          "word": "neuf"
+        },
+        {
+          "language": "ar",
+          "word": "تسعة"
+        },
+        {
+          "language": "ja",
+          "word": "く"
+        },
+        {
+          "language": "id",
+          "word": "sembilan",
+          "ipa": "sembilan"
+        },
+        {
+          "language": "ur",
+          "word": "نو",
+          "ipa": "nau"
+        },
+        {
+          "language": "de",
+          "word": "neun"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,898 @@
+{
+  "super_languages": [
+    {
+      "language": "zh",
+      "population": 1020.85
+    },
+    {
+      "language": "en",
+      "population": 818.9
+    },
+    {
+      "language": "es",
+      "population": 500.45
+    },
+    {
+      "language": "hi",
+      "population": 489.65
+    },
+    {
+      "language": "bn",
+      "population": 246.9
+    },
+    {
+      "language": "pt",
+      "population": 240.0
+    },
+    {
+      "language": "ru",
+      "population": 205.75
+    },
+    {
+      "language": "fr",
+      "population": 176.95
+    },
+    {
+      "language": "ar",
+      "population": 137.0
+    },
+    {
+      "language": "ja",
+      "population": 126.26075
+    },
+    {
+      "language": "id",
+      "population": 121.3
+    },
+    {
+      "language": "ur",
+      "population": 119.8
+    },
+    {
+      "language": "de",
+      "population": 103.55
+    }
+  ],
+  "super_words": [
+    {
+      "id": 128,
+      "meaning": "0",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "零",
+          "ipa": "liŋ²⁴",
+          "loan": "lin"
+        },
+        {
+          "language": "en",
+          "word": "zero",
+          "ipa": "ˈzɪə.ɹəʊ",
+          "loan": "zirou"
+        },
+        {
+          "language": "es",
+          "word": "cero",
+          "ipa": "θeɾo",
+          "loan": "sero"
+        },
+        {
+          "language": "hi",
+          "word": "शून्य",
+          "ipa": "ʃuːnja",
+          "loan": "cunya"
+        },
+        {
+          "language": "bn",
+          "word": "শূন্য",
+          "ipa": "ʃunyo",
+          "loan": "cunio"
+        },
+        {
+          "language": "pt",
+          "word": "zero",
+          "ipa": "zɛɾu",
+          "loan": "zeru"
+        },
+        {
+          "language": "ru",
+          "word": "нуль",
+          "ipa": "nulʲ",
+          "loan": "nul"
+        },
+        {
+          "language": "fr",
+          "word": "zéro",
+          "ipa": "zeʁo",
+          "loan": "zero"
+        },
+        {
+          "language": "ar",
+          "word": "صفر",
+          "ipa": "sˤafar",
+          "loan": "safar"
+        },
+        {
+          "language": "ja",
+          "word": "れい",
+          "ipa": "ɾe̞ː",
+          "loan": "re"
+        },
+        {
+          "language": "id",
+          "word": "nol",
+          "ipa": "nol",
+          "loan": "nol"
+        },
+        {
+          "language": "ur",
+          "word": "صفر",
+          "ipa": "sifr",
+          "loan": "sifr"
+        },
+        {
+          "language": "de",
+          "word": "null",
+          "ipa": "nʊl",
+          "loan": "nul"
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "meaning": "1",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "一",
+          "ipa": "i⁵⁵",
+          "loan": "i"
+        },
+        {
+          "language": "en",
+          "word": "one",
+          "ipa": "wɒn",
+          "loan": "won"
+        },
+        {
+          "language": "es",
+          "word": "uno",
+          "ipa": "uno",
+          "loan": "uno"
+        },
+        {
+          "language": "hi",
+          "word": "एक",
+          "ipa": "eːk",
+          "loan": "ek"
+        },
+        {
+          "language": "bn",
+          "word": "এক",
+          "ipa": "æːk",
+          "loan": "ak"
+        },
+        {
+          "language": "pt",
+          "word": "um",
+          "ipa": "ũ",
+          "loan": "u"
+        },
+        {
+          "language": "ru",
+          "word": "один",
+          "ipa": "ɐdʲin",
+          "loan": "adin"
+        },
+        {
+          "language": "fr",
+          "word": "un",
+          "ipa": "œ̃",
+          "loan": ""
+        },
+        {
+          "language": "ar",
+          "word": "واحد",
+          "ipa": "waːħid",
+          "loan": "waxid"
+        },
+        {
+          "language": "ja",
+          "word": "いち",
+          "ipa": "it͡ɕi",
+          "loan": "itci"
+        },
+        {
+          "language": "id",
+          "word": "satu",
+          "ipa": "satu",
+          "loan": "satu"
+        },
+        {
+          "language": "ur",
+          "word": "ایک",
+          "ipa": "ek",
+          "loan": "ek"
+        },
+        {
+          "language": "de",
+          "word": "eins",
+          "ipa": "aɪ̯ns",
+          "loan": "ains"
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "meaning": "2",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "二",
+          "ipa": "ɚ²¹³",
+          "loan": ""
+        },
+        {
+          "language": "en",
+          "word": "two",
+          "ipa": "tuː",
+          "loan": "tu"
+        },
+        {
+          "language": "es",
+          "word": "dos",
+          "ipa": "dos",
+          "loan": "dos"
+        },
+        {
+          "language": "hi",
+          "word": "दो",
+          "ipa": "d̪oː",
+          "loan": "do"
+        },
+        {
+          "language": "bn",
+          "word": "দুই",
+          "ipa": "dui",
+          "loan": "dui"
+        },
+        {
+          "language": "pt",
+          "word": "dois",
+          "ipa": "dojs",
+          "loan": "doys"
+        },
+        {
+          "language": "ru",
+          "word": "два",
+          "ipa": "dva",
+          "loan": "dva"
+        },
+        {
+          "language": "fr",
+          "word": "deux",
+          "ipa": "dø",
+          "loan": "de"
+        },
+        {
+          "language": "ar",
+          "word": "اثنان",
+          "ipa": "iθnaːn",
+          "loan": "isnan"
+        },
+        {
+          "language": "ja",
+          "word": "に",
+          "ipa": "ɲ̟i",
+          "loan": "ni"
+        },
+        {
+          "language": "id",
+          "word": "dua",
+          "ipa": "dua",
+          "loan": "dua"
+        },
+        {
+          "language": "ur",
+          "word": "دو",
+          "ipa": "du",
+          "loan": "du"
+        },
+        {
+          "language": "de",
+          "word": "zwei",
+          "ipa": "t͡svaɪ",
+          "loan": "tsvai"
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "meaning": "3",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "三",
+          "ipa": "sän⁵¹",
+          "loan": "san"
+        },
+        {
+          "language": "en",
+          "word": "three",
+          "ipa": "fɹiː",
+          "loan": "fri"
+        },
+        {
+          "language": "es",
+          "word": "tres",
+          "ipa": "tɾes",
+          "loan": "tres"
+        },
+        {
+          "language": "hi",
+          "word": "तीन",
+          "ipa": "t̪iːn",
+          "loan": "tin"
+        },
+        {
+          "language": "bn",
+          "word": "তিন",
+          "ipa": "tin",
+          "loan": "tin"
+        },
+        {
+          "language": "pt",
+          "word": "três",
+          "ipa": "tɾejs",
+          "loan": "treys"
+        },
+        {
+          "language": "ru",
+          "word": "три",
+          "ipa": "trʲi",
+          "loan": "tri"
+        },
+        {
+          "language": "fr",
+          "word": "trois",
+          "ipa": "tʁwa",
+          "loan": "trwa"
+        },
+        {
+          "language": "ar",
+          "word": "ثلاثة",
+          "ipa": "θalaːθah",
+          "loan": "salasah"
+        },
+        {
+          "language": "ja",
+          "word": "さん",
+          "ipa": "sã̠ɴ",
+          "loan": "san"
+        },
+        {
+          "language": "id",
+          "word": "tiga",
+          "ipa": "tiga",
+          "loan": "tia"
+        },
+        {
+          "language": "ur",
+          "word": "تین",
+          "ipa": "tin",
+          "loan": "tin"
+        },
+        {
+          "language": "de",
+          "word": "drei",
+          "ipa": "dʁaɪ̯",
+          "loan": "drai"
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "meaning": "4",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "四",
+          "ipa": "sz̩²¹³",
+          "loan": "sz"
+        },
+        {
+          "language": "en",
+          "word": "four",
+          "ipa": "fɔː",
+          "loan": "fo"
+        },
+        {
+          "language": "es",
+          "word": "cuatro",
+          "ipa": "kwatɾo",
+          "loan": "kwatro"
+        },
+        {
+          "language": "hi",
+          "word": "चार",
+          "ipa": "t͡ʃɑːɾ",
+          "loan": "tcar"
+        },
+        {
+          "language": "bn",
+          "word": "চার",
+          "ipa": "ʈʃar",
+          "loan": "tcar"
+        },
+        {
+          "language": "pt",
+          "word": "quatro",
+          "ipa": "kwatɾu",
+          "loan": "kwatru"
+        },
+        {
+          "language": "ru",
+          "word": "четыре",
+          "ipa": "t͡ɕɪtɨrʲe",
+          "loan": "tcitire"
+        },
+        {
+          "language": "fr",
+          "word": "quatre",
+          "ipa": "kat",
+          "loan": "kat"
+        },
+        {
+          "language": "ar",
+          "word": "أربعة",
+          "ipa": "ʔarbaʕa",
+          "loan": "arbaua"
+        },
+        {
+          "language": "ja",
+          "word": "し",
+          "ipa": "ɕi",
+          "loan": "ci"
+        },
+        {
+          "language": "id",
+          "word": "empat",
+          "ipa": "empat",
+          "loan": "empat"
+        },
+        {
+          "language": "ur",
+          "word": "چار",
+          "ipa": "t͡ʃɑːɾ",
+          "loan": "tcar"
+        },
+        {
+          "language": "de",
+          "word": "vier",
+          "ipa": "fiːr",
+          "loan": "fir"
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "meaning": "5",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "五",
+          "ipa": "u²¹⁴",
+          "loan": "u"
+        },
+        {
+          "language": "en",
+          "word": "five",
+          "ipa": "faɪv",
+          "loan": "faiv"
+        },
+        {
+          "language": "es",
+          "word": "cinco",
+          "ipa": "θinko",
+          "loan": "sinko"
+        },
+        {
+          "language": "hi",
+          "word": "पाँच",
+          "ipa": "pɑ̃ːt͡ʃ",
+          "loan": "patc"
+        },
+        {
+          "language": "bn",
+          "word": "পাঁচ",
+          "ipa": "pamc",
+          "loan": "pamk"
+        },
+        {
+          "language": "pt",
+          "word": "cinco",
+          "ipa": "sĩku",
+          "loan": "siku"
+        },
+        {
+          "language": "ru",
+          "word": "пять",
+          "ipa": "pʲætʲ",
+          "loan": "pat"
+        },
+        {
+          "language": "fr",
+          "word": "cinq",
+          "ipa": "sɛ̃",
+          "loan": "se"
+        },
+        {
+          "language": "ar",
+          "word": "خمسة",
+          "ipa": "xamsa",
+          "loan": "xamsa"
+        },
+        {
+          "language": "ja",
+          "word": "ご",
+          "ipa": "ɡo̞",
+          "loan": "go"
+        },
+        {
+          "language": "id",
+          "word": "lima",
+          "ipa": "lima",
+          "loan": "lima"
+        },
+        {
+          "language": "ur",
+          "word": "پانچ",
+          "ipa": "pɑ̃ːt͡ʃ",
+          "loan": "patc"
+        },
+        {
+          "language": "de",
+          "word": "fünf",
+          "ipa": "fʏmf",
+          "loan": "fimf"
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "meaning": "6",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "六",
+          "ipa": "ljoʊ̯⁵¹",
+          "loan": "lyou"
+        },
+        {
+          "language": "en",
+          "word": "six",
+          "ipa": "sɪks",
+          "loan": "siks"
+        },
+        {
+          "language": "es",
+          "word": "seis",
+          "ipa": "seis",
+          "loan": "seis"
+        },
+        {
+          "language": "hi",
+          "word": "छह",
+          "ipa": "t͡ʃʰəɦ",
+          "loan": "tcah"
+        },
+        {
+          "language": "bn",
+          "word": "ছয়",
+          "ipa": "tʃʰɔj",
+          "loan": "tcoy"
+        },
+        {
+          "language": "pt",
+          "word": "seis",
+          "ipa": "sejs",
+          "loan": "seys"
+        },
+        {
+          "language": "ru",
+          "word": "шесть",
+          "ipa": "ʂɛsʲtʲ",
+          "loan": "cest"
+        },
+        {
+          "language": "fr",
+          "word": "six",
+          "ipa": "si",
+          "loan": "si"
+        },
+        {
+          "language": "ar",
+          "word": "ستة",
+          "ipa": "sitta",
+          "loan": "sitta"
+        },
+        {
+          "language": "ja",
+          "word": "ろく",
+          "ipa": "ɾo̞kɯ̟ᵝ",
+          "loan": "roku"
+        },
+        {
+          "language": "id",
+          "word": "enam",
+          "ipa": "enam",
+          "loan": "enam"
+        },
+        {
+          "language": "ur",
+          "word": "چھہ",
+          "ipa": "t͡ʃʰeː",
+          "loan": "tce"
+        },
+        {
+          "language": "de",
+          "word": "sechs",
+          "ipa": "zɛks",
+          "loan": "zeks"
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "meaning": "7",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "七",
+          "ipa": "t͡ɕʰi⁵⁵",
+          "loan": "tci"
+        },
+        {
+          "language": "en",
+          "word": "seven",
+          "ipa": "sɛvən",
+          "loan": "seven"
+        },
+        {
+          "language": "es",
+          "word": "siete",
+          "ipa": "sjete",
+          "loan": "syete"
+        },
+        {
+          "language": "hi",
+          "word": "सात",
+          "ipa": "sɑːt̪",
+          "loan": "sat"
+        },
+        {
+          "language": "bn",
+          "word": "সাত",
+          "ipa": "ʃat",
+          "loan": "cat"
+        },
+        {
+          "language": "pt",
+          "word": "sete",
+          "ipa": "sɛte",
+          "loan": "sete"
+        },
+        {
+          "language": "ru",
+          "word": "семь",
+          "ipa": "sʲemʲ",
+          "loan": "sem"
+        },
+        {
+          "language": "fr",
+          "word": "trois",
+          "ipa": "tʁwa",
+          "loan": "trwa"
+        },
+        {
+          "language": "ar",
+          "word": "سبعة",
+          "ipa": "sabʕa",
+          "loan": "sabua"
+        },
+        {
+          "language": "ja",
+          "word": "しち",
+          "ipa": "ɕi̥t͡ɕi",
+          "loan": "citci"
+        },
+        {
+          "language": "id",
+          "word": "tujuh",
+          "ipa": "tujuh",
+          "loan": "tuyuh"
+        },
+        {
+          "language": "ur",
+          "word": "سات",
+          "ipa": "sɑːt̪",
+          "loan": "sat"
+        },
+        {
+          "language": "de",
+          "word": "sieben",
+          "ipa": "ziːbm̩",
+          "loan": "zibm"
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "meaning": "8",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "八",
+          "ipa": "pä⁵⁵",
+          "loan": "pa"
+        },
+        {
+          "language": "en",
+          "word": "eight",
+          "ipa": "eɪt",
+          "loan": "eit"
+        },
+        {
+          "language": "es",
+          "word": "ocho",
+          "ipa": "ot͡ʃo",
+          "loan": "otco"
+        },
+        {
+          "language": "hi",
+          "word": "आठ",
+          "ipa": "ɑːʈʰ",
+          "loan": "at"
+        },
+        {
+          "language": "bn",
+          "word": "আট",
+          "ipa": "aʈ",
+          "loan": "at"
+        },
+        {
+          "language": "pt",
+          "word": "oito",
+          "ipa": "ojtu",
+          "loan": "oytu"
+        },
+        {
+          "language": "ru",
+          "word": "восемь",
+          "ipa": "vosʲɪmʲ",
+          "loan": "vosim"
+        },
+        {
+          "language": "fr",
+          "word": "huit",
+          "ipa": "wit",
+          "loan": "wit"
+        },
+        {
+          "language": "ar",
+          "word": "ثمانية",
+          "ipa": "θamaːnija",
+          "loan": "samaniya"
+        },
+        {
+          "language": "ja",
+          "word": "はち",
+          "ipa": "ha̠t͡ɕi",
+          "loan": "hatci"
+        },
+        {
+          "language": "id",
+          "word": "delapan",
+          "ipa": "delapan",
+          "loan": "delapan"
+        },
+        {
+          "language": "ur",
+          "word": "آٹھ",
+          "ipa": "aːʈʰ",
+          "loan": "at"
+        },
+        {
+          "language": "de",
+          "word": "acht",
+          "ipa": "axt",
+          "loan": "axt"
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "meaning": "9",
+      "origins": [
+        {
+          "language": "zh",
+          "word": "九",
+          "ipa": "t͡ɕiou⁵¹",
+          "loan": "tciou"
+        },
+        {
+          "language": "en",
+          "word": "nine",
+          "ipa": "naɪn",
+          "loan": "nain"
+        },
+        {
+          "language": "es",
+          "word": "nueve",
+          "ipa": "nwebe",
+          "loan": "nwebe"
+        },
+        {
+          "language": "hi",
+          "word": "नौ",
+          "ipa": "nɔː",
+          "loan": "no"
+        },
+        {
+          "language": "bn",
+          "word": "নয়",
+          "ipa": "noy",
+          "loan": "noi"
+        },
+        {
+          "language": "pt",
+          "word": "nove",
+          "ipa": "nɔvi",
+          "loan": "novi"
+        },
+        {
+          "language": "ru",
+          "word": "девять",
+          "ipa": "dʲevʲɪtʲ",
+          "loan": "devit"
+        },
+        {
+          "language": "fr",
+          "word": "neuf",
+          "ipa": "nø",
+          "loan": "ne"
+        },
+        {
+          "language": "ar",
+          "word": "تسعة",
+          "ipa": "tisʕa",
+          "loan": "tisua"
+        },
+        {
+          "language": "ja",
+          "word": "く",
+          "ipa": "kɯ̟ᵝ",
+          "loan": "ku"
+        },
+        {
+          "language": "id",
+          "word": "sembilan",
+          "ipa": "sembilan",
+          "loan": "sembilan"
+        },
+        {
+          "language": "ur",
+          "word": "نو",
+          "ipa": "nau",
+          "loan": "nau"
+        },
+        {
+          "language": "de",
+          "word": "neun",
+          "ipa": "nɔʏ̯n",
+          "loan": "noin"
+        }
+      ]
+    }
+  ]
+}
