@@ -56,15 +56,15 @@ fn export_word(candidate_words: &WordGenerator) {
     f.write_all(output.as_bytes()).unwrap();
 }
 
-fn export_word_list(generated: &BTreeMap<Vec<Phoneme>, String>) {
+fn export_word_list(generated: &BTreeMap<String, Vec<Phoneme>>) {
     let mut f = fs::File::create("./export/word-list.md").unwrap();
     let output = {
         let mut s = "# Word List\n\n|Spell|Meaning|\n|:-:|:-:|\n".to_string();
         for x in generated {
             s.push_str(&format!(
                 "|[{0}](./dic/{0}.md)|{1}|\n",
-                convert::phonemes_to_loan(x.0),
-                x.1
+                convert::phonemes_to_loan(x.1),
+                x.0
             ));
         }
         s
@@ -98,8 +98,8 @@ pub fn main() {
         word_generator.generate();
         export_word(&word_generator);
         generated.insert(
-            (&word_generator.words[0].word).clone(),
             word_generator.super_word.meaning.clone(),
+            (&word_generator.words[0].word).clone(),
         );
         export_result(recipe.clone());
         export_word_list(&generated);
