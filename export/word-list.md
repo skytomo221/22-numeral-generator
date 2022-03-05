@@ -2,13 +2,13 @@
 
 |Spell|Meaning|
 |:-:|:-:|
-|[rolin](./dic/rolin.md)|0|
+|[lir](./dic/lir.md)|0|
 |[wok](./dic/wok.md)|1|
 |[don](./dic/don.md)|2|
-|[sarin](./dic/sarin.md)|3|
-|[focat](./dic/focat.md)|4|
-|[pasiv](./dic/pasiv.md)|5|
-|[siyoy](./dic/siyoy.md)|6|
-|[ciset](./dic/ciset.md)|7|
-|[patit](./dic/patit.md)|8|
-|[novin](./dic/novin.md)|9|
+|[rin](./dic/rin.md)|3|
+|[cat](./dic/cat.md)|4|
+|[fat](./dic/fat.md)|5|
+|[sis](./dic/sis.md)|6|
+|[set](./dic/set.md)|7|
+|[pat](./dic/pat.md)|8|
+|[cin](./dic/cin.md)|9|

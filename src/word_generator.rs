@@ -85,18 +85,7 @@ impl WordGenerator<'_> {
     }
 
     fn candidate_length(&self) -> i32 {
-        let mut sum = 0.0;
-        for origin in &self.super_word.origins {
-            sum += origin.loan.as_ref().unwrap().len() as f64
-                * self.get_population(&origin.language)
-                / self.weight_sum;
-        }
-        let sum = sum.ceil() as i32;
-        if sum % 2 == 0 {
-            sum + 1
-        } else {
-            sum
-        }
+        3
     }
 
     fn cadidate_phonemes(&self, n: i32) -> BTreeSet<Phoneme> {
