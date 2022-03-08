@@ -1,12 +1,14 @@
 use bacitit_word_generator::convert;
-use bacitit_word_generator::phoneme::{Phoneme};
-use bacitit_word_generator::recipe::{Recipe};
-use bacitit_word_generator::word_generator::WordGenerator;
+use bacitit_word_generator::number_generator::NumberGenerator;
+use bacitit_word_generator::phoneme::Phoneme;
+use bacitit_word_generator::recipe::Recipe;
 use std::collections::BTreeMap;
 use std::fs::File;
 use std::io::BufReader;
+use std::vec;
 use std::{fs, io::Write};
 
+/*
 fn export_word(candidate_words: &WordGenerator) {
     let best_word = &candidate_words.words[0];
     let mut output = format!(
@@ -75,33 +77,25 @@ fn export_word_list(generated: &BTreeMap<String, Vec<Phoneme>>) {
 fn export_result(recipe: Recipe) {
     serde_json::to_writer_pretty(&File::create("./data/result.json").unwrap(), &recipe).unwrap();
 }
+*/
 
 pub fn main() {
     let recipe_file = File::open("data/recipe.json").unwrap();
     let recipe_reader = BufReader::new(recipe_file);
     let recipe: Recipe = serde_json::from_reader(recipe_reader).unwrap();
     let recipe = recipe.complement();
-    let mut generated = BTreeMap::new();
+    //let mut generated = BTreeMap::new();
     println!("super_words.words.len() = {}", recipe.super_words.len());
-    for super_word in recipe.super_words.clone() {
-        let mut word_generator = WordGenerator {
-            super_languages: &recipe.super_languages,
-            super_word,
-            words: Vec::new(),
-            limit: 1000000,
-            weight_sum: 0.0,
-        };
-        println!(
-            "\nGenerating a word meaning '{}'...",
-            word_generator.super_word.meaning
-        );
-        word_generator.generate();
-        export_word(&word_generator);
-        generated.insert(
-            word_generator.super_word.meaning.clone(),
-            (&word_generator.words[0].word).clone(),
-        );
-        export_result(recipe.clone());
-        export_word_list(&generated);
-    }
+    let mut number_generator =
+        NumberGenerator::new(recipe.super_languages.clone(), recipe.super_words.clone());
+    number_generator.generate();
+    /*
+    export_word(&number_generator);
+    generated.insert(
+        number_generator.super_word.meaning.clone(),
+        (&number_generator.words[0].word).clone(),
+    );
+    export_result(recipe.clone());
+    export_word_list(&generated);
+    */
 }
