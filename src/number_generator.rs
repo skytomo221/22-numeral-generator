@@ -4,13 +4,26 @@ use crate::{
 };
 use core::fmt;
 use itertools::Itertools;
-use std::collections::{HashMap, HashSet};
+use std::{
+    collections::{HashMap, HashSet},
+    hash::Hash,
+};
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash)]
 pub struct Number {
     pub first_consonant: Phoneme,
     pub vowel: Phoneme,
     pub second_consonant: Phoneme,
+}
+
+impl Number {
+    fn duplicate_first_consonant(&self, other: Number) -> bool {
+        self.first_consonant == other.first_consonant
+    }
+
+    fn duplicate_second_consonant(&self, other: Number) -> bool {
+        self.second_consonant == other.second_consonant
+    }
 }
 
 impl fmt::Display for Number {
@@ -33,6 +46,171 @@ pub struct CandidateNumber {
 pub struct CandidateNumbers {
     pub score: f64,
     pub numbers: Vec<CandidateNumber>,
+}
+
+#[derive(Debug)]
+struct NumberIterator {
+    candidate_consonants: Vec<Phoneme>,
+    vowel: Phoneme,
+    first_consonant_index: usize,
+    second_consonant_index: usize,
+}
+
+impl NumberIterator {
+    pub fn new(candidate_consonants: Vec<Phoneme>, vowel: Phoneme) -> NumberIterator {
+        NumberIterator {
+            candidate_consonants,
+            vowel,
+            first_consonant_index: 0,
+            second_consonant_index: 0,
+        }
+    }
+
+    fn end(&self) -> bool {
+        self.first_consonant_index >= self.candidate_consonants.len()
+    }
+
+    pub fn carry_up_index(&mut self) {
+        self.second_consonant_index = 0;
+        self.first_consonant_index += 1;
+    }
+
+    fn next_index(&mut self) {
+        if self.end() {
+            return;
+        } else if self.second_consonant_index + 1 >= self.candidate_consonants.len() {
+            self.carry_up_index();
+        } else {
+            self.second_consonant_index += 1;
+        }
+    }
+
+    pub fn reload(&mut self) {
+        self.first_consonant_index = 0;
+        self.second_consonant_index = 0;
+    }
+}
+
+impl Iterator for NumberIterator {
+    type Item = Number;
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.end() {
+            None
+        } else {
+            while self.first_consonant_index == self.second_consonant_index {
+                self.next_index();
+                if self.end() {
+                    return None;
+                }
+            }
+            let first_consonant = self.candidate_consonants[self.first_consonant_index];
+            let second_consonant = self.candidate_consonants[self.second_consonant_index];
+            let number = Some(Number {
+                first_consonant,
+                vowel: self.vowel,
+                second_consonant,
+            });
+            self.next_index();
+            number
+        }
+    }
+}
+
+struct NumbersIterator {
+    number_itrators: Vec<NumberIterator>,
+    numbers: Vec<Number>,
+}
+
+impl NumbersIterator {
+    pub fn new(candidates: Vec<Vec<Phoneme>>) -> NumbersIterator {
+        let vowels = vec![Phoneme::A, Phoneme::E, Phoneme::I, Phoneme::O, Phoneme::U];
+        let mut number_itrators = Vec::new();
+        for (index, candidate_consonants) in candidates.iter().enumerate() {
+            number_itrators.push(NumberIterator::new(
+                candidate_consonants.clone(),
+                vowels[index % vowels.len()],
+            ));
+        }
+        let mut numbers = Vec::new();
+        for number_itrator in &mut number_itrators {
+            numbers.push(number_itrator.next().unwrap());
+        }
+        NumbersIterator {
+            number_itrators,
+            numbers,
+        }
+    }
+
+    fn raw_next(&mut self, index: usize) -> Option<Vec<Number>> {
+        if let Some(number) = self.number_itrators[index].next() {
+            self.numbers[index] = number;
+            Some(self.numbers.clone())
+        } else if index == 0 {
+            None
+        } else {
+            self.number_itrators[index].reload();
+            self.numbers[index] = self.number_itrators[index].next().unwrap();
+            self.raw_next(index - 1)
+        }
+    }
+
+    fn raw_next_and_get_index(&mut self, index: usize) -> usize {
+        if let Some(number) = self.number_itrators[index].next() {
+            self.numbers[index] = number;
+            index
+        } else if index == 0 {
+            0
+        } else {
+            self.number_itrators[index].reload();
+            self.numbers[index] = self.number_itrators[index].next().unwrap();
+            self.raw_next_and_get_index(index - 1)
+        }
+    }
+
+    fn avoid_duplicate(&mut self) {
+        let mut index = 1;
+        while index < self.numbers.len() {
+            let number = self.numbers[index];
+            if self
+                .numbers
+                .iter()
+                .take(index)
+                .any(|head| head.duplicate_first_consonant(number))
+            {
+                self.number_itrators[index].carry_up_index();
+                if index + 1 < self.numbers.len() {
+                    for index in (index + 1)..self.numbers.len() {
+                        self.number_itrators[index].reload();
+                        self.raw_next(index);
+                    }
+                }
+                index = self.raw_next_and_get_index(index);
+            } else if self
+                .numbers
+                .iter()
+                .take(index)
+                .any(|head| head.duplicate_second_consonant(number))
+            {
+                if index + 1 < self.numbers.len() {
+                    for index in (index + 1)..self.numbers.len() {
+                        self.number_itrators[index].reload();
+                        self.raw_next(index);
+                    }
+                }
+                index = self.raw_next_and_get_index(index);
+            } else {
+                index += 1;
+            }
+        }
+    }
+}
+
+impl Iterator for NumbersIterator {
+    type Item = Vec<Number>;
+    fn next(&mut self) -> Option<Self::Item> {
+        self.avoid_duplicate();
+        self.raw_next(9)
+    }
 }
 
 pub struct NumberGenerator {
@@ -120,46 +298,29 @@ impl NumberGenerator {
     }
 
     pub fn generate(&mut self) {
-        let consonants = vec![
-            Phoneme::P,
-            Phoneme::B,
-            Phoneme::T,
-            Phoneme::D,
-            Phoneme::K,
-            Phoneme::G,
-            Phoneme::M,
-            Phoneme::N,
-            Phoneme::R,
-            Phoneme::F,
-            Phoneme::V,
-            Phoneme::S,
-            Phoneme::Z,
-            Phoneme::C,
-            Phoneme::J,
-            Phoneme::X,
-            Phoneme::H,
-            Phoneme::L,
-            Phoneme::Y,
-            Phoneme::W,
-        ];
         let vowels = vec![Phoneme::A, Phoneme::E, Phoneme::I, Phoneme::O, Phoneme::U];
-        for all_consonants in consonants.iter().permutations(10).permutations(2) {
-            let first_consonants = &all_consonants[0];
-            let second_consonants = &all_consonants[1];
-            let raw_candiate_numbers = first_consonants.iter().zip(second_consonants.iter());
+        let candidates = self
+            .candidate_phonemes
+            .values()
+            .map(|v| {
+                let mut keys = v
+                    .keys()
+                    .cloned()
+                    .filter(|p| !vowels.contains(p))
+                    .collect::<Vec<_>>();
+                keys.sort();
+                keys.dedup();
+                keys
+            })
+            .collect();
+        let numbers_iterator = NumbersIterator::new(candidates);
+        let mut max_score = 0.0;
+        for consonants in numbers_iterator {
             let mut candiate_numbers = CandidateNumbers {
                 score: 0.0,
                 numbers: Vec::<CandidateNumber>::new(),
             };
-            for (index, candidate_number) in raw_candiate_numbers.enumerate() {
-                let first_consonant = **candidate_number.0;
-                let second_consonant = **candidate_number.1;
-                let vowel = vowels[index % vowels.len()];
-                let number = Number {
-                    first_consonant,
-                    vowel,
-                    second_consonant,
-                };
+            for (index, &number) in consonants.iter().enumerate() {
                 let candiate_number = CandidateNumber {
                     score: self.number_score(index, &number),
                     number,
@@ -167,16 +328,19 @@ impl NumberGenerator {
                 candiate_numbers.numbers.push(candiate_number);
             }
             candiate_numbers.score = self.candidate_numbers_score(&candiate_numbers.numbers);
-            println!(
-                "{} | {}",
-                &candiate_numbers
-                    .numbers
-                    .iter()
-                    .map(|c| { format!("{}", c.number) })
-                    .join(", "),
-                &candiate_numbers.score
-            );
-            self.words.push(candiate_numbers);
+            if candiate_numbers.score >= max_score {
+                max_score = candiate_numbers.score;
+                println!(
+                    "{} | {}",
+                    &candiate_numbers
+                        .numbers
+                        .iter()
+                        .map(|c| { format!("{}", c.number) })
+                        .join(", "),
+                    &candiate_numbers.score
+                );
+                self.words.push(candiate_numbers);
+            }
         }
     }
 
