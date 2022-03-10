@@ -219,7 +219,7 @@ pub struct NumberGenerator {
     pub words: Vec<CandidateNumbers>,
     weight_sum: f64,
     regular_weights: HashMap<String, f64>,
-    candidate_phonemes: HashMap<usize, HashMap<Phoneme, f64>>,
+    candidate_phonemes: Vec<HashMap<Phoneme, f64>>,
 }
 
 impl NumberGenerator {
@@ -260,7 +260,7 @@ impl NumberGenerator {
     }
 
     fn initialize_candidate_phonemes(&mut self) {
-        self.candidate_phonemes = HashMap::new();
+        self.candidate_phonemes = Vec::new();
         for super_word in &self.super_words {
             let number = super_word.meaning.parse::<usize>().unwrap();
             let mut v = HashMap::new();
@@ -291,7 +291,7 @@ impl NumberGenerator {
             words: Vec::new(),
             weight_sum: 0.0,
             regular_weights: HashMap::new(),
-            candidate_phonemes: HashMap::new(),
+            candidate_phonemes: Vec::new(),
         };
         number_generator.initialize();
         number_generator
@@ -346,11 +346,11 @@ impl NumberGenerator {
 
     fn number_score(&self, index: usize, number: &Number) -> f64 {
         let mut score = 0.0;
-        if self.candidate_phonemes[&index].contains_key(&number.first_consonant) {
-            score += self.candidate_phonemes[&index][&number.first_consonant];
+        if self.candidate_phonemes[index].contains_key(&number.first_consonant) {
+            score += self.candidate_phonemes[index][&number.first_consonant];
         }
-        if self.candidate_phonemes[&index].contains_key(&number.second_consonant) {
-            score += self.candidate_phonemes[&index][&number.second_consonant];
+        if self.candidate_phonemes[index].contains_key(&number.second_consonant) {
+            score += self.candidate_phonemes[index][&number.second_consonant];
         }
         score
     }
