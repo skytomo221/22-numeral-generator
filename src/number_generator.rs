@@ -167,7 +167,8 @@ impl NumbersIterator {
         }
     }
 
-    fn avoid_duplicate(&mut self) {
+    fn avoid_duplicate(&mut self) -> bool {
+        let mut duplicate = false;
         let mut index = 1;
         while index < self.numbers.len() {
             let number = self.numbers[index];
@@ -177,6 +178,7 @@ impl NumbersIterator {
                 .take(index)
                 .any(|head| head.duplicate_first_consonant(number))
             {
+                duplicate = true;
                 self.number_itrators[index].carry_up_index();
                 if index + 1 < self.numbers.len() {
                     for index in (index + 1)..self.numbers.len() {
@@ -191,6 +193,7 @@ impl NumbersIterator {
                 .take(index)
                 .any(|head| head.duplicate_second_consonant(number))
             {
+                duplicate = true;
                 if index + 1 < self.numbers.len() {
                     for index in (index + 1)..self.numbers.len() {
                         self.number_itrators[index].reload();
@@ -202,14 +205,18 @@ impl NumbersIterator {
                 index += 1;
             }
         }
+        duplicate
     }
 }
 
 impl Iterator for NumbersIterator {
     type Item = Vec<Number>;
     fn next(&mut self) -> Option<Self::Item> {
-        self.avoid_duplicate();
-        self.raw_next(9)
+        if self.avoid_duplicate() {
+            Some(self.numbers.clone())
+        } else {
+            self.raw_next(9)
+        }
     }
 }
 
