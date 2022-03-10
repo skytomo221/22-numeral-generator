@@ -8,8 +8,7 @@ pub fn main() {
     let recipe_reader = BufReader::new(recipe_file);
     let recipe: Recipe = serde_json::from_reader(recipe_reader).unwrap();
     let recipe = recipe.complement();
-    //let mut generated = BTreeMap::new();
-    println!("super_words.words.len() = {}", recipe.super_words.len());
+    println!("Ready...");
     let mut number_generator =
         NumberGenerator::new(recipe.super_languages.clone(), recipe.super_words.clone());
     number_generator.generate();

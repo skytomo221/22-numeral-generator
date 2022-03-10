@@ -318,9 +318,9 @@ impl NumberGenerator {
         let vowels = vec![Phoneme::A, Phoneme::E, Phoneme::I, Phoneme::O, Phoneme::U];
         let candidates = self
             .candidate_phonemes
-            .values()
-            .map(|v| {
-                let mut keys = v
+            .iter()
+            .map(|scores| {
+                let mut keys = scores
                     .keys()
                     .cloned()
                     .filter(|p| !vowels.contains(p))
@@ -332,7 +332,53 @@ impl NumberGenerator {
             .collect();
         let numbers_iterator = NumbersIterator::new(candidates);
         let mut max_score = 0.0;
-        for consonants in numbers_iterator {
+        let consonants = vec![
+            Phoneme::P,
+            Phoneme::B,
+            Phoneme::T,
+            Phoneme::D,
+            Phoneme::K,
+            Phoneme::G,
+            Phoneme::M,
+            Phoneme::N,
+            Phoneme::R,
+            Phoneme::F,
+            Phoneme::V,
+            Phoneme::S,
+            Phoneme::Z,
+            Phoneme::C,
+            Phoneme::J,
+            Phoneme::X,
+            Phoneme::H,
+            Phoneme::L,
+            Phoneme::Y,
+            Phoneme::W,
+        ];
+        println!("");
+        println!(
+            "| Consonant |    0      1      2      3      4      5      6      7      8      9   |"
+        );
+        println!(
+            "|:---------:|:----------------------------------------------------------------------|"
+        );
+        for consonant in consonants {
+            print!("|         {:?} |", consonant);
+            self.candidate_phonemes
+                .iter()
+                .map(|candidate_phoneme| {
+                    if candidate_phoneme.contains_key(&consonant) {
+                        candidate_phoneme[&consonant]
+                    } else {
+                        0.0
+                    }
+                })
+                .for_each(|x| print!(" {:.4}", x));
+            println!(" |");
+        }
+        println!("");
+        println!("|      Line |  0   1   2   3   4   5   6   7   8   9  |    0      1      2      3      4      5      6      7      8      9   |  Total |");
+        println!("|:---------:|:---------------------------------------:|:---------------------------------------------------------------------:|:------:|");
+        for (index, consonants) in numbers_iterator.enumerate() {
             let mut candiate_numbers = CandidateNumbers {
                 score: 0.0,
                 numbers: Vec::<CandidateNumber>::new(),
@@ -348,12 +394,18 @@ impl NumberGenerator {
             if candiate_numbers.score >= max_score {
                 max_score = candiate_numbers.score;
                 println!(
-                    "{} | {}",
+                    "|{:10} | {} | {} | {:.4} |",
+                    index,
                     &candiate_numbers
                         .numbers
                         .iter()
                         .map(|c| { format!("{}", c.number) })
-                        .join(", "),
+                        .join(" "),
+                    &candiate_numbers
+                        .numbers
+                        .iter()
+                        .map(|c| { format!("{:.4}", c.score) })
+                        .join(" "),
                     &candiate_numbers.score
                 );
                 self.words.push(candiate_numbers);
