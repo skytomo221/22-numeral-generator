@@ -117,6 +117,7 @@ impl Iterator for NumberIterator {
 }
 
 struct NumbersIterator {
+    end: bool,
     number_itrators: Vec<NumberIterator>,
     numbers: Vec<Number>,
 }
@@ -136,16 +137,20 @@ impl NumbersIterator {
             numbers.push(number_itrator.next().unwrap());
         }
         NumbersIterator {
+            end: false,
             number_itrators,
             numbers,
         }
     }
 
     fn raw_next(&mut self, index: usize) -> Option<Vec<Number>> {
-        if let Some(number) = self.number_itrators[index].next() {
+        if self.end {
+            None
+        } else if let Some(number) = self.number_itrators[index].next() {
             self.numbers[index] = number;
             Some(self.numbers.clone())
         } else if index == 0 {
+            self.end = true;
             None
         } else {
             self.number_itrators[index].reload();
@@ -155,10 +160,13 @@ impl NumbersIterator {
     }
 
     fn raw_next_and_get_index(&mut self, index: usize) -> usize {
-        if let Some(number) = self.number_itrators[index].next() {
+        if self.end {
+            0
+        } else if let Some(number) = self.number_itrators[index].next() {
             self.numbers[index] = number;
             index
         } else if index == 0 {
+            self.end = true;
             0
         } else {
             self.number_itrators[index].reload();
@@ -172,7 +180,9 @@ impl NumbersIterator {
         let mut index = 1;
         while index < self.numbers.len() {
             let number = self.numbers[index];
-            if self
+            if self.end {
+                return false;
+            } else if self
                 .numbers
                 .iter()
                 .take(index)
