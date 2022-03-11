@@ -377,8 +377,8 @@ impl NumberGenerator {
             println!(" |");
         }
         println!("");
-        println!("|      Line |  0   1   2   3   4   5   6   7   8   9  |    0      1      2      3      4      5      6      7      8      9   |  Total |");
-        println!("|:---------:|:---------------------------------------:|:---------------------------------------------------------------------:|:------:|");
+        println!("|       Line |  0   1   2   3   4   5   6   7   8   9  |    0      1      2      3      4      5      6      7      8      9   |  Total |");
+        println!("|:----------:|:---------------------------------------:|:---------------------------------------------------------------------:|:------:|");
         let mut index = 0;
         for consonants in numbers_iterator {
             index += 1;
@@ -397,7 +397,7 @@ impl NumberGenerator {
             if candiate_numbers.score >= max_score {
                 max_score = candiate_numbers.score;
                 println!(
-                    "|{:10} | {} | {} | {:.4} |",
+                    "|{:11} | {} | {} | {:.4} |",
                     index,
                     &candiate_numbers
                         .numbers
