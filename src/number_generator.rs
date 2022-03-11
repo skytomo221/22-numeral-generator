@@ -367,9 +367,9 @@ impl NumberGenerator {
             println!(" |");
         }
         println!("");
-        println!("|       Line |  0   1   2   3   4   5   6   7   8   9  |    0      1      2      3      4      5      6      7      8      9   |  Total |");
-        println!("|:----------:|:---------------------------------------:|:---------------------------------------------------------------------:|:------:|");
-        let mut index = 0;
+        println!("|        Line |  0   1   2   3   4   5   6   7   8   9  |    0      1      2      3      4      5      6      7      8      9   |  Total |");
+        println!("|:-----------:|:---------------------------------------:|:---------------------------------------------------------------------:|:------:|");
+        let mut index: i64 = 0;
         for consonants in numbers_iterator {
             index += 1;
             let mut candiate_numbers = CandidateNumbers {
@@ -387,7 +387,7 @@ impl NumberGenerator {
             if candiate_numbers.score >= max_score {
                 max_score = candiate_numbers.score;
                 println!(
-                    "|{:11} | {} | {} | {:.4} |",
+                    "|{:12} | {} | {} | {:.4} |",
                     index,
                     &candiate_numbers
                         .numbers
@@ -402,6 +402,22 @@ impl NumberGenerator {
                     &candiate_numbers.score
                 );
                 self.words.push(candiate_numbers);
+            } else if index % 100000000 == 0 {
+                println!(
+                    "\x1b[2m|{:12} | {} | {} | {:.4} |\x1b[0m",
+                    index,
+                    &candiate_numbers
+                        .numbers
+                        .iter()
+                        .map(|c| { format!("{}", c.number) })
+                        .join(" "),
+                    &candiate_numbers
+                        .numbers
+                        .iter()
+                        .map(|c| { format!("{:.4}", c.score) })
+                        .join(" "),
+                    &candiate_numbers.score
+                );
             }
         }
         println!("{} patterns checked.", index);
