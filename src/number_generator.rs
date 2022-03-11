@@ -360,7 +360,7 @@ impl NumberGenerator {
             "| Consonant |    0      1      2      3      4      5      6      7      8      9   |"
         );
         println!(
-            "|:---------:|:----------------------------------------------------------------------|"
+            "|:---------:|:---------------------------------------------------------------------:|"
         );
         for consonant in consonants {
             print!("|         {:?} |", consonant);
@@ -379,7 +379,9 @@ impl NumberGenerator {
         println!("");
         println!("|      Line |  0   1   2   3   4   5   6   7   8   9  |    0      1      2      3      4      5      6      7      8      9   |  Total |");
         println!("|:---------:|:---------------------------------------:|:---------------------------------------------------------------------:|:------:|");
-        for (index, consonants) in numbers_iterator.enumerate() {
+        let mut index = 0;
+        for consonants in numbers_iterator {
+            index += 1;
             let mut candiate_numbers = CandidateNumbers {
                 score: 0.0,
                 numbers: Vec::<CandidateNumber>::new(),
@@ -412,6 +414,7 @@ impl NumberGenerator {
                 self.words.push(candiate_numbers);
             }
         }
+        println!("{} patterns checked.", index);
     }
 
     fn number_score(&self, index: usize, number: &Number) -> f64 {
