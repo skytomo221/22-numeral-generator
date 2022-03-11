@@ -175,26 +175,22 @@ impl NumbersIterator {
         }
     }
 
-    fn avoid_duplicate(&mut self) -> bool {
-        let mut duplicate = false;
+    fn avoid_duplicate(&mut self) -> Option<Vec<Number>> {
         let mut index = 1;
         while index < self.numbers.len() {
             let number = self.numbers[index];
             if self.end {
-                return false;
+                return None;
             } else if self
                 .numbers
                 .iter()
                 .take(index)
                 .any(|head| head.duplicate_first_consonant(number))
             {
-                duplicate = true;
                 self.number_itrators[index].carry_up_index();
-                if index + 1 < self.numbers.len() {
-                    for index in (index + 1)..self.numbers.len() {
-                        self.number_itrators[index].reload();
-                        self.raw_next(index);
-                    }
+                for index in (index + 1)..self.numbers.len() {
+                    self.number_itrators[index].reload();
+                    self.raw_next(index);
                 }
                 index = self.raw_next_and_get_index(index);
             } else if self
@@ -203,30 +199,24 @@ impl NumbersIterator {
                 .take(index)
                 .any(|head| head.duplicate_second_consonant(number))
             {
-                duplicate = true;
-                if index + 1 < self.numbers.len() {
-                    for index in (index + 1)..self.numbers.len() {
-                        self.number_itrators[index].reload();
-                        self.raw_next(index);
-                    }
+                for index in (index + 1)..self.numbers.len() {
+                    self.number_itrators[index].reload();
+                    self.raw_next(index);
                 }
                 index = self.raw_next_and_get_index(index);
             } else {
                 index += 1;
             }
         }
-        duplicate
+        Some(self.numbers.clone())
     }
 }
 
 impl Iterator for NumbersIterator {
     type Item = Vec<Number>;
     fn next(&mut self) -> Option<Self::Item> {
-        if self.avoid_duplicate() {
-            Some(self.numbers.clone())
-        } else {
-            self.raw_next(9)
-        }
+        self.raw_next(self.numbers.len() - 1);
+        self.avoid_duplicate()
     }
 }
 
