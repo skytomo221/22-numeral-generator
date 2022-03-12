@@ -314,6 +314,7 @@ impl NumberGenerator {
                     .keys()
                     .cloned()
                     .filter(|p| !vowels.contains(p))
+                    .filter(|p| scores[p] > 0.1)
                     .collect::<Vec<_>>();
                 keys.sort();
                 keys.dedup();
